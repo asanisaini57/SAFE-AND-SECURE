@@ -963,7 +963,7 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
 @keyframes scroll { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 
 /* ── section heading ───────────────────────────────────── */
-.sec { padding: 96px 0 100px; }
+.sec { padding-top: 96px; padding-bottom: 100px; }
 .sec-head {
   display:grid; grid-template-columns: 1fr 1fr; gap: 48px;
   align-items: end; margin-bottom: 56px;
@@ -1302,7 +1302,7 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
 .num-card .s { font-size: 12.5px; color: var(--ink-2); margin-top: 6px; line-height: 1.4; }
 
 /* ── contact ───────────────────────────────────────────── */
-.contact { padding: 96px 0; }
+.contact { padding-top: 96px; padding-bottom: 96px; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; border-top: 1px solid var(--ink); padding-top: 36px; }
 .contact h2 { margin: 0; font-family: var(--f-sans); font-weight: 500; font-size: clamp(40px, 5.4vw, 72px); letter-spacing: -0.035em; line-height: .95; }
 .contact h2 em { font-family: var(--f-sans); font-style: normal; font-weight: 500; }
