@@ -782,21 +782,19 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
   position: relative; min-height: 320px;
   display: flex; flex-direction: column; justify-content: space-between;
   background: var(--paper);
-  transition: background .35s ease, color .35s ease;
+  transition: background .6s ease, transform .6s cubic-bezier(.22,.61,.36,1), box-shadow .6s ease;
 }
 .service::before {
   content:""; position: absolute; inset: 0;
   background: var(--ink);
-  transform: scaleY(0); transform-origin: bottom;
-  transition: transform .4s cubic-bezier(.6,0,.2,1);
+  opacity: 0;
+  transition: opacity .6s ease;
   z-index: 0;
+  pointer-events: none;
 }
-.service:hover::before { transform: scaleY(1); transform-origin: top; }
-.service:hover { color: var(--paper); }
+.service:hover { transform: translateY(-4px); box-shadow: 0 12px 32px -16px rgba(10, 21, 37, 0.18); background: #F5EFDB; }
 .service > * { position: relative; z-index: 1; }
-.service:hover .svc-num { color: var(--mute-2); }
-.service:hover .svc-meta { color: var(--mute-2); }
-.service:hover .svc-arrow { transform: translateX(4px); color: var(--signal); }
+.service:hover .svc-arrow { transform: translateX(4px); color: var(--signal); transition: transform .5s ease, color .5s ease; }
 .service:nth-child(3n) { border-right: 0; }
 .service.span3 { grid-column: span 3; }
 
