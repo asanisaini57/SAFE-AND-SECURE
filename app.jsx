@@ -115,7 +115,7 @@ function FieldGrid() {
     { id: "fc-truck",   tall: true,
       tag: "On the road",      cap: ["LONG-HAUL","FREEDOM"],
       title: <>Your trucks. <em>Our</em> backup.</>,
-      src: "https://images.unsplash.com/photo-1586191582151-f73872dfd183?w=1600&q=90&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=90&auto=format&fit=crop",
       placeholder: "Drop a tractor / dry-van photo." },
     { id: "fc-manager", tall: false,
       tag: "Our desk",       cap: ["COMPLIANCE","DONE FOR YOU"],
@@ -303,7 +303,7 @@ function Hero() {
           <image-slot id="hero-main"
             shape="rect"
             placeholder="Drop a hero truck photo — fleet tractor pulling a dry van."
-            src="https://images.unsplash.com/photo-1586191582151-f73872dfd183?w=1600&q=90&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=90&auto=format&fit=crop"
           ></image-slot>
           <div className="hr-grad"></div>
           <div className="hr-pip"><div className="pp"></div><div className="pp"></div><div className="pp"></div></div>
@@ -480,9 +480,8 @@ function LiveDesk() {
             <span className="live"><span className="blip"></span>Streaming</span>
           </div>
           <div className="ld-items">
-            <ul className="ld-items-roll">
+            <ul>
               {items.map((it,i)=> <Row it={it} i={i} key={i}/>)}
-              {items.map((it,i)=> <Row it={it} i={"b"+i} key={"b"+i}/>)}
             </ul>
           </div>
         </div>
@@ -989,27 +988,9 @@ function Contact() {
 /* Footer                                                      */
 /* ────────────────────────────────────────────────────────── */
 function Footer() {
-  const routes = [
-    ["DAL","ATL",817], ["HOU","MEM",564], ["LAX","PHX",374], ["CHI","NYC",790],
-    ["DEN","SLC",525], ["MIA","ATL",660], ["SEA","BOI",506], ["PHX","ELP",427],
-    ["KCK","STL",250], ["MSP","OMA",380], ["NSH","BNA",18],  ["AUS","HOU",165],
-  ];
   return (
     <footer className="foot">
       <div className="shell">
-        <div className="foot-ticker" aria-hidden>
-          <div className="foot-ticker-track">
-            {[...routes, ...routes].map(([a,b,m],i)=>(
-              <span key={i} className="route">
-                <span className="city">{a}</span>
-                <span className="arrow-r">→</span>
-                <span className="city">{b}</span>
-                <span className="miles">{m} mi</span>
-              </span>
-            ))}
-          </div>
-        </div>
-
         <div className="foot-top">
           <div className="foot-brand">
             <h3 className="line-up">
@@ -1059,7 +1040,7 @@ function Footer() {
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "palette": ["#C9A04A","#0A1525","#EDE6D2"],
   "italicAccents": true,
-  "marquee": true,
+  "marquee": false,
   "grain": true
 }/*EDITMODE-END*/;
 
@@ -1089,7 +1070,6 @@ function App() {
       <LiveDesk/>
       <Services/>
       <FieldGrid/>
-      <TickRail/>
       <OnTheRoad/>
       <TheRun/>
       <CaseStudy/>
