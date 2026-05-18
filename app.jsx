@@ -1,4 +1,4 @@
-// Safe & Secure — app (v2)
+// Proactive Safety Solutions — app (v2)
 // + Scroll reveals (IntersectionObserver), word-stagger hero, animated scorecard bars
 // + New sections: Live Desk, Meet the Desk, On the Road, Case Study
 // + New palette options (midnight + brass + cream default)
@@ -241,8 +241,8 @@ function Nav() {
     <nav className="nav">
       <div className="shell nav-row">
         <a className="nav-brand" href="#top">
-          <span className="brand-mark">S</span>
-          <span>Safe<span className="italic-serif" style={{margin:"0 4px"}}>&amp;</span>Secure</span>
+          <span className="brand-mark">P</span>
+          <span>Proactive Safety Solutions</span>
         </a>
         <div className="nav-links">
           <a href="#services">Services</a>
@@ -281,7 +281,7 @@ function Hero() {
           <span className="dot-live"></span>
           <span>USDOT · FMCSA · IFTA · IRP partners</span>
           <span className="sep"></span>
-          <span>EST. 2009 · DALLAS, TX</span>
+          <span>EST. 2009 · ONTARIO, CANADA</span>
         </div>
 
         <h1 className="hero-cine-title line-up">
@@ -321,7 +321,7 @@ function Hero() {
 
       <div className="hero-cine-tag">
         <span className="hct-dot"></span>
-        <span>LIVE · DALLAS, TX</span>
+        <span>LIVE · ONTARIO, CANADA</span>
       </div>
     </section>
   );
@@ -354,7 +354,7 @@ function BelowHero() {
           ></image-slot>
           <div className="img-overlay">
             <span className="cap">A safe rig is a profitable rig</span>
-            <span className="num">Dallas, Texas</span>
+            <span className="num">Mississauga, Ontario</span>
           </div>
         </div>
 
@@ -471,7 +471,7 @@ function LiveDesk() {
           <h3 className="ld-lede line-up">
             <Line>The work isn&rsquo;t in <em>slides</em>.</Line>
             <Line>It&rsquo;s in the inbox, the audit folder,</Line>
-            <Line>and the 2 a.m. call from Laredo.</Line>
+            <Line>and the 2 a.m. call from the road.</Line>
           </h3>
           <p className="ld-sub">
             A rolling sample of what came across the desk this morning. Every line is a real
@@ -511,8 +511,8 @@ const SERVICES = [
     blurb: "We watch your drivers' hours in real time on whatever ELD you use — Samsara, Motive, Geotab, you name it. We catch problems before they become tickets.",
     meta: "Works with every ELD" },
   { n: "03", title: <>Fuel tax (<em>IFTA</em>) &amp; plates</>,
-    blurb: "Quarterly fuel tax filings and plate renewals across all 48 states and Canada. You send us the miles and fuel — we do the math and file on time.",
-    meta: "All 48 states + Canada" },
+    blurb: "Quarterly fuel tax filings and plate renewals across all Canadian provinces and US states. You send us the miles and fuel — we do the math and file on time.",
+    meta: "All provinces + US states" },
   { n: "04", title: <>Driver files, <em>audit-ready</em></>,
     blurb: "MVRs, medical cards, drug tests, road tests — every driver file kept current and organized. When the auditor asks, we have it pulled up in minutes.",
     meta: "Always inspection-ready" },
@@ -614,7 +614,7 @@ function MeetDesk() {
   const team = [
     { id: "team-1", role: "Lead · Audit & DataQ", name: <>Marisol <em>Vega</em></>,
       bio: "12 years on the FMCSA side before joining. Has personally argued — and won — 1,551 DataQ challenges across 41 states.",
-      stats: [["Years","12"],["DataQ wins","1,551"],["State","TX·IL·CA"]],
+      stats: [["Years","12"],["DataQ wins","1,551"],["Province","ON·QC·BC"]],
       badge: "Lead",
       src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop" },
     { id: "team-2", role: "ELD & HOS · 24/7 Desk", name: <>Bryan <em>Park</em></>,
@@ -679,7 +679,7 @@ function TheRun() {
       p: "A 12-week roadmap with named owners on our side, deadlines, and exactly which violations stop showing up in 30, 60, and 90 days.",
       list: [["Deliverable","Compliance plan"],["Time","1 week"],["Owners","2 named"]] },
     { mm: "MILE 500", kind: "Drive", title: <>We <em>run</em> the desks</>,
-      p: "We file, monitor, train, and pick up the phone when an officer in Laredo calls about a duty-status edit at 2 a.m. The work just gets done.",
+      p: "We file, monitor, train, and pick up the phone when an officer calls about a duty-status edit at 2 a.m. The work just gets done.",
       list: [["Coverage","24 / 7 desk"],["SLA","2 hr replies"],["Reports","Monthly"]] },
     { mm: "MILE 1K", kind: "Defend", title: <>We <em>show</em> the work</>,
       p: "Quarterly reviews with your ops lead. Every BASIC trend, every DataQ win, every dollar saved on renewal — on paper, on time, every time.",
@@ -750,7 +750,7 @@ function CaseStudy() {
               placeholder="Drop a yard / shop photo — natural daylight, a tractor or a manager at work."
               src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=1400&q=85&auto=format&fit=crop"></image-slot>
             <div className="corner-foot">
-              <span>San Antonio, TX</span>
+              <span>Mississauga, ON</span>
               <span>104 power units</span>
             </div>
           </div>
@@ -760,8 +760,8 @@ function CaseStudy() {
               <div className="label">The client said</div>
               <blockquote className="quote">
                 We had three weeks before our renewal quote and a Conditional rating
-                on the door. The Safe &amp; Secure desk picked up the phone, drove down to
-                San Antonio, and four days later we had a plan I could actually run.
+                on the door. The Proactive Safety Solutions team picked up the phone, drove out to
+                meet us, and four days later we had a plan I could actually run.
               </blockquote>
               <div className="case-byline">
                 <span className="who">Lúcio Hernandez</span>
@@ -881,13 +881,13 @@ function Contact() {
           <div className="contact-meta">
             <div className="cm-row">
               <span className="k">Phone</span>
-              <span className="v">+1 (214) 555-COMPLY</span>
-              <span className="x">M – F · 7a – 7p CT</span>
+              <span className="v">905-226-7726</span>
+              <span className="x">M – F · 7a – 7p ET</span>
             </div>
             <hr className="rule-soft"/>
             <div className="cm-row">
               <span className="k">After hours</span>
-              <span className="v">+1 (214) 555-0911</span>
+              <span className="v">905-226-7726</span>
               <span className="x">24 / 7 desk · roadside</span>
             </div>
             <hr className="rule-soft"/>
@@ -899,7 +899,7 @@ function Contact() {
             <hr className="rule-soft"/>
             <div className="cm-row">
               <span className="k">Office</span>
-              <span className="v">1402 Commerce St · Dallas, TX 75201</span>
+              <span className="v">Mississauga, Ontario, Canada</span>
               <span className="x">Walk-ins welcome</span>
             </div>
             <hr className="rule-soft"/>
@@ -956,7 +956,7 @@ function Contact() {
             </div>
             <div className="field">
               <label>Phone</label>
-              <input type="tel" placeholder="(214) 555-0144"/>
+              <input type="tel" placeholder="905-226-7726"/>
             </div>
           </div>
 
@@ -1004,10 +1004,10 @@ function Footer() {
         <div className="foot-top">
           <div className="foot-brand">
             <h3 className="line-up">
-              <Line>Safe<em>&amp;</em></Line>
-              <Line>Secure.</Line>
+              <Line>Proactive</Line>
+              <Line>Safety <em>Solutions.</em></Line>
             </h3>
-            <p>Compliance and safety for American trucking. Dallas, since 2009. A real desk, not a portal.</p>
+            <p>Compliance and safety for Canadian trucking. Based in Ontario, since 2009. Real people, not a portal.</p>
           </div>
           <div className="foot-col">
             <h5>Services</h5>
@@ -1028,16 +1028,16 @@ function Footer() {
           </div>
           <div className="foot-col">
             <h5>Reach us</h5>
-            <a>+1 (214) 555-COMPLY</a>
+            <a>905-226-7726</a>
             <a>example@gmail.com</a>
-            <a>1402 Commerce St, Dallas TX</a>
+            <a>Mississauga, Ontario</a>
             <a>USDOT 3492118</a>
             <a>MC 1,209,447</a>
           </div>
         </div>
         <div className="foot-bot">
-          <span>© 2026 Safe &amp; Secure Compliance Co. — All rights reserved.</span>
-          <span>Made in Texas · Audited in 48 states</span>
+          <span>© 2026 Proactive Safety Solutions — All rights reserved.</span>
+          <span>Made in Ontario · Serving all of Canada</span>
         </div>
       </div>
     </footer>
