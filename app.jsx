@@ -115,7 +115,7 @@ function FieldGrid() {
     { id: "fc-truck",   tall: true,
       tag: "On the road",      cap: ["LONG-HAUL","FREEDOM"],
       title: <>Your trucks. <em>Our</em> backup.</>,
-      src: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=90&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1592805144716-feeccccef5ac?w=1600&q=90&auto=format&fit=crop",
       placeholder: "Drop a tractor / dry-van photo." },
     { id: "fc-manager", tall: false,
       tag: "Our desk",       cap: ["COMPLIANCE","DONE FOR YOU"],
@@ -568,7 +568,7 @@ function OnTheRoad() {
           <image-slot id="road-fleet"
             shape="rect"
             placeholder="Drop a wide highway/fleet photo here."
-            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=2000&q=95&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=2000&q=95&auto=format&fit=crop"
           ></image-slot>
         </div>
 
