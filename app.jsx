@@ -279,7 +279,7 @@ function Hero() {
       <div className="hero-cine-inner">
         <div className="hero-cine-eyebrow reveal">
           <span className="dot-live"></span>
-          <span>USDOT · FMCSA · IFTA · IRP partners</span>
+          <span>MC AUTHORITY · IFTA · IRP · PERMITS</span>
           <span className="sep"></span>
           <span>EST. 2009 · ONTARIO, CANADA</span>
         </div>
@@ -371,11 +371,11 @@ function BelowHero() {
             Compliance health — Excellent
           </div>
           <div className="sc-bars">
-            <ScoreBar name="DOT inspections" val={100} kind="good"/>
-            <ScoreBar name="ELD / HOS hours" val={97} kind="good"/>
-            <ScoreBar name="IFTA Q2 filing"   val={100} kind="good"/>
-            <ScoreBar name="CSA · Unsafe Drv." val={42} max={100} kind="warn"/>
+            <ScoreBar name="MC Authority active" val={100} kind="good"/>
+            <ScoreBar name="HOS / ELD logs" val={97} kind="good"/>
+            <ScoreBar name="IFTA filings" val={100} kind="good"/>
             <ScoreBar name="DQ files current" val={96} kind="good"/>
+            <ScoreBar name="Permits valid" val={100} kind="good"/>
           </div>
         </div>
 
@@ -393,7 +393,7 @@ function BelowHero() {
           <div className="group">
             <div className="lbl">In business</div>
             <div className="num tnum"><Counter to={15} duration={1.4}/><em>yrs</em></div>
-            <div className="sub">Through ELD, AOBRD, and Clearinghouse.</div>
+            <div className="sub">From owner-operators to 100+ truck fleets.</div>
           </div>
         </div>
       </div>
@@ -406,16 +406,16 @@ function BelowHero() {
 /* ────────────────────────────────────────────────────────── */
 function Marquee() {
   const items = [
-    ["USDOT", "Federal motor carrier"],
-    ["FMCSA", "Safety regulation"],
-    ["IFTA",  "Fuel tax"],
-    ["IRP",   "Apportioned plates"],
-    ["ELD",   "Electronic logging"],
-    ["CSA",   "BASICs management"],
-    ["MCS-150","Biennial update"],
-    ["UCR",   "Unified carrier reg."],
-    ["HM-181","Hazmat"],
-    ["Clearinghouse","Drug & alcohol"],
+    ["MC Authority", "Get your operating authority"],
+    ["DQ Files",     "Driver qualification files"],
+    ["Driver Hiring","Onboarding new drivers"],
+    ["HOS",          "Hours of service logs"],
+    ["IFTA",         "Fuel tax filings"],
+    ["IRP",          "Apportioned plates"],
+    ["Permits",      "All permit types"],
+    ["UCR",          "Unified carrier registration"],
+    ["Audits",       "Audit-ready files"],
+    ["24/7 Desk",    "Real people, anytime"],
   ];
   const Row = () => (
     <div className="marquee-row">
@@ -444,16 +444,16 @@ function Marquee() {
 /* ────────────────────────────────────────────────────────── */
 function LiveDesk() {
   const items = [
-    ["09:47", "done", "Filed Q2 IFTA — 8 jurisdictions",          "Hernandez Logistics"],
-    ["09:42", "win",  "DataQ win · inspection #91-2304 vacated",  "BlueRidge Carriers"],
-    ["09:38", "work", "Drafting MCS-150 biennial update",         "Cascade Freight"],
-    ["09:31", "done", "Cleared 4 driver MVRs through Clearinghouse","Sunbelt Express"],
-    ["09:24", "work", "Coaching call · CSA Unsafe Driving",       "Plainview Transport"],
-    ["09:19", "win",  "Renewal -12% · primary liability bound",    "Mesa Diesel Co."],
-    ["09:11", "done", "Filed IRP renewal · 14 power units",        "Coastline Hauling"],
-    ["09:04", "work", "Preparing DQ file for FMCSA audit",         "Northwoods Wood"],
-    ["08:58", "done", "DOT roadside · clean inspection logged",    "Hernandez Logistics"],
-    ["08:51", "win",  "MCS-90 endorsement re-issued in 6 hours",   "AltaPeak LLC"],
+    ["09:47", "done", "Filed quarterly IFTA — 8 provinces & states", "Maple Ridge Transport"],
+    ["09:42", "win",  "New MC Authority approved in 11 days",        "BlueRidge Carriers"],
+    ["09:38", "work", "Drafting permit renewal package",             "Cascade Freight"],
+    ["09:31", "done", "Onboarded 4 new drivers — all road-ready",    "Sunbelt Express"],
+    ["09:24", "work", "Hiring screening for 2 new drivers",          "Plainview Transport"],
+    ["09:19", "done", "Updated DQ files for 12 drivers",             "Mesa Diesel Co."],
+    ["09:11", "done", "Filed IRP renewal · 14 power units",          "Coastline Hauling"],
+    ["09:04", "work", "Preparing audit file for review",             "Northwoods Wood"],
+    ["08:58", "done", "Roadside inspection — clean log filed",       "Maple Ridge Transport"],
+    ["08:51", "win",  "Oversize permit issued in 4 hours",           "AltaPeak LLC"],
   ];
   const Row = ({it, i}) => (
     <li key={i}>
@@ -469,13 +469,13 @@ function LiveDesk() {
         <div className="reveal">
           <div className="eyebrow">§ The desk, right now</div>
           <h3 className="ld-lede line-up">
-            <Line>The work isn&rsquo;t in <em>slides</em>.</Line>
-            <Line>It&rsquo;s in the inbox, the audit folder,</Line>
-            <Line>and the 2 a.m. call from the road.</Line>
+            <Line>What we&rsquo;re <em>working on</em></Line>
+            <Line>for our customers</Line>
+            <Line>right now.</Line>
           </h3>
           <p className="ld-sub">
-            A rolling sample of what came across the desk this morning. Every line is a real
-            recurring item — filings closed, DataQ wins booked, calls coached.
+            Real work, real customers — a quick look at what came across our desk this morning.
+            Filings done, permits approved, drivers onboarded.
           </p>
           <div style={{marginTop:18, display:"flex", gap:24, fontFamily:"var(--f-mono)", fontSize:11, letterSpacing:".12em", textTransform:"uppercase", color:"var(--mute-2)"}}>
             <span><b style={{color:"var(--signal)", fontFamily:"var(--f-sans)", fontSize:14}}>184</b> items / day</span>
@@ -504,24 +504,24 @@ function LiveDesk() {
 /* Services                                                    */
 /* ────────────────────────────────────────────────────────── */
 const SERVICES = [
-  { n: "01", title: <>DOT <em>compliance</em>, sorted</>,
-    blurb: "Every form, filing, and renewal the DOT throws at you — we handle it. Your authority stays active, your file stays clean, and inspectors have nothing to flag.",
-    meta: "Forms · Filings · Renewals" },
-  { n: "02", title: <>Driver logs &amp; <em>hours</em></>,
-    blurb: "We watch your drivers' hours in real time on whatever ELD you use — Samsara, Motive, Geotab, you name it. We catch problems before they become tickets.",
+  { n: "01", title: <>MC <em>Authority</em></>,
+    blurb: "Need to start a trucking company? We get your MC Authority — the paperwork that lets you legally haul freight. New or renewing, we handle it start to finish.",
+    meta: "New + Renewals" },
+  { n: "02", title: <>DQ <em>Files</em></>,
+    blurb: "Driver qualification files done right. Medical cards, road tests, abstracts, and drug tests — all kept up to date and ready for any audit, anytime.",
+    meta: "Always audit-ready" },
+  { n: "03", title: <>Driver <em>Hiring</em></>,
+    blurb: "Hiring new drivers? We do the background checks, abstracts, and onboarding paperwork. You meet them, we make sure they're road-ready and legal to drive.",
+    meta: "Onboarding + checks" },
+  { n: "04", title: <>HOS <em>Monitoring</em></>,
+    blurb: "We watch your drivers' Hours of Service in real time on whatever ELD you use. We catch problems before they become tickets — and keep your logs clean.",
     meta: "Works with every ELD" },
-  { n: "03", title: <>Fuel tax (<em>IFTA</em>) &amp; plates</>,
-    blurb: "Quarterly fuel tax filings and plate renewals across all Canadian provinces and US states. You send us the miles and fuel — we do the math and file on time.",
-    meta: "All provinces + US states" },
-  { n: "04", title: <>Driver files, <em>audit-ready</em></>,
-    blurb: "MVRs, medical cards, drug tests, road tests — every driver file kept current and organized. When the auditor asks, we have it pulled up in minutes.",
-    meta: "Always inspection-ready" },
-  { n: "05", title: <>Fight unfair <em>tickets</em></>,
-    blurb: "Got a roadside inspection that wasn't your fault? We challenge it. Last year we cleared 71% of the violations we fought — keeping your safety score clean.",
-    meta: "71% win rate" },
-  { n: "06", title: <>Lower <em>insurance</em> rates</>,
-    blurb: "We shop your insurance every renewal — liability, cargo, and physical damage. Our customers save 9% on average compared to what they were paying before.",
-    meta: "Save 9% on average" },
+  { n: "05", title: <>IFTA &amp; <em>IRP</em></>,
+    blurb: "Quarterly fuel tax (IFTA) filings and apportioned plate (IRP) renewals across all provinces and US states. You send us miles and fuel — we file on time.",
+    meta: "Filed every quarter" },
+  { n: "06", title: <>Permits, <em>handled</em></>,
+    blurb: "UCR, oversize, overweight, hazmat, fuel permits — whatever permit your truck needs to keep rolling, we get it. Fast turnarounds, no missed paperwork.",
+    meta: "All Canadian + US" },
 ];
 
 function Services() {
@@ -612,20 +612,20 @@ function OnTheRoad() {
 /* ────────────────────────────────────────────────────────── */
 function MeetDesk() {
   const team = [
-    { id: "team-1", role: "Lead · Audit & DataQ", name: <>Marisol <em>Vega</em></>,
-      bio: "12 years on the FMCSA side before joining. Has personally argued — and won — 1,551 DataQ challenges across 41 states.",
-      stats: [["Years","12"],["DataQ wins","1,551"],["Province","ON·QC·BC"]],
+    { id: "team-1", role: "Lead · MC Authority & Audits", name: <>Marisol <em>Vega</em></>,
+      bio: "12 years helping trucking companies get their MC Authority and stay audit-ready. She knows every form and every deadline.",
+      stats: [["Years","12"],["Authorities filed","800+"],["Audits passed","99%"]],
       badge: "Lead",
       src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop" },
-    { id: "team-2", role: "ELD & HOS · 24/7 Desk", name: <>Bryan <em>Park</em></>,
+    { id: "team-2", role: "HOS & ELD · 24/7 Desk", name: <>Bryan <em>Park</em></>,
       bio: "Reads HOS logs the way other people read newspapers. The reason your driver gets a text before they get a violation.",
-      stats: [["Years","8"],["Logs / wk","18k"],["Platforms","6"]],
-      badge: "ELD",
+      stats: [["Years","8"],["Logs / wk","18k"],["ELD platforms","6"]],
+      badge: "HOS",
       src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop" },
-    { id: "team-3", role: "Insurance · Risk", name: <>Dee <em>Coleman</em></>,
-      bio: "Builds the loss-runs story underwriters actually read. Last cycle she negotiated 9% under market on 41 of 44 renewals.",
-      stats: [["Years","15"],["Renewals","–9%"],["Markets","27"]],
-      badge: "Risk",
+    { id: "team-3", role: "Driver Hiring & DQ Files", name: <>Dee <em>Coleman</em></>,
+      bio: "Handles new driver onboarding from start to finish — background checks, paperwork, abstracts. So your drivers are ready to drive.",
+      stats: [["Years","15"],["Drivers hired","2,400+"],["Provinces","13"]],
+      badge: "Hiring",
       src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80&auto=format&fit=crop" },
   ];
   return (
@@ -633,12 +633,12 @@ function MeetDesk() {
       <div className="shell">
         <div className="sec-head">
           <div className="reveal">
-            <div className="label">§ The desk — three names, not a ticket queue</div>
-            <h2 className="line-up"><Line>You'll know who's</Line><Line>doing your <em>work</em>.</Line></h2>
+            <div className="label">§ Meet the team that handles your work</div>
+            <h2 className="line-up"><Line>You'll know who&rsquo;s</Line><Line>doing your <em>work</em>.</Line></h2>
           </div>
           <p className="lede reveal" data-d="2">
-            We hire compliance managers, not account managers. Every fleet gets a named lead, a
-            named backup, and a direct line. No queues, no chatbots, no &ldquo;let me transfer you.&rdquo;
+            We&rsquo;re compliance experts, not call-center reps. You get one person handling your
+            account, a backup, and a direct phone line. No tickets, no chatbots, no transfers.
           </p>
         </div>
 
@@ -672,30 +672,30 @@ function MeetDesk() {
 /* ────────────────────────────────────────────────────────── */
 function TheRun() {
   const steps = [
-    { mm: "MILE 000", kind: "Diagnose", title: <>We <em>read</em> your fleet</>,
-      p: "A 90-minute discovery: DOT file, CSA snapshot, last 4 quarters of IFTA, current ELD config, DQ folders, and active insurance loss-runs.",
-      list: [["Deliverable","Audit memo"],["Time","48 hours"],["Cost","$0"]] },
-    { mm: "MILE 250", kind: "Plan", title: <>We <em>draw</em> the route</>,
-      p: "A 12-week roadmap with named owners on our side, deadlines, and exactly which violations stop showing up in 30, 60, and 90 days.",
-      list: [["Deliverable","Compliance plan"],["Time","1 week"],["Owners","2 named"]] },
-    { mm: "MILE 500", kind: "Drive", title: <>We <em>run</em> the desks</>,
-      p: "We file, monitor, train, and pick up the phone when an officer calls about a duty-status edit at 2 a.m. The work just gets done.",
-      list: [["Coverage","24 / 7 desk"],["SLA","2 hr replies"],["Reports","Monthly"]] },
-    { mm: "MILE 1K", kind: "Defend", title: <>We <em>show</em> the work</>,
-      p: "Quarterly reviews with your ops lead. Every BASIC trend, every DataQ win, every dollar saved on renewal — on paper, on time, every time.",
-      list: [["Cadence","Quarterly"],["Format","On-site or Zoom"],["Renewal","-9% avg"]] },
+    { mm: "STEP 01", kind: "Look", title: <>We <em>look</em> at your fleet</>,
+      p: "A free 60-minute call. We review your MC Authority, IFTA filings, driver files, and permits to spot what's missing or about to expire.",
+      list: [["You get","Audit report"],["Time","48 hours"],["Cost","Free"]] },
+    { mm: "STEP 02", kind: "Plan", title: <>We <em>make</em> a plan</>,
+      p: "A simple step-by-step plan with deadlines, who owns what, and exactly what gets fixed in 30, 60, and 90 days. No surprises.",
+      list: [["You get","Action plan"],["Time","1 week"],["Owners","2 named"]] },
+    { mm: "STEP 03", kind: "Do", title: <>We <em>do</em> the work</>,
+      p: "We file the forms, monitor your logs, hire your drivers, and pick up the phone when something happens at 2 a.m. You don't lift a finger.",
+      list: [["Coverage","24 / 7 desk"],["Reply","Within 2 hrs"],["Reports","Monthly"]] },
+    { mm: "STEP 04", kind: "Review", title: <>We <em>review</em> it with you</>,
+      p: "Every three months we sit down with you (in person or on a call) to show what's been done and what's coming next. Plain English. Real paper.",
+      list: [["When","Every 3 months"],["How","In-person or call"],["Format","Plain English"]] },
   ];
   return (
     <section className="run" id="run">
       <div className="shell">
         <div className="sec-head">
           <div className="reveal">
-            <div className="label eyebrow">§ The Run — how we work</div>
-            <h2 className="line-up"><Line>From <em>kickoff</em></Line><Line>to <em>quarterly review</em>.</Line></h2>
+            <div className="label eyebrow">§ How we work — in 4 simple steps</div>
+            <h2 className="line-up"><Line>From <em>first call</em></Line><Line>to <em>fully sorted</em>.</Line></h2>
           </div>
           <p className="lede reveal" data-d="2">
-            Every account follows the same four mile-markers. No surprise upsells, no
-            month-three handoffs to a junior, no “let me check with my manager.”
+            Every trucking company we work with goes through the same four simple steps.
+            No surprise costs, no handing you off to someone else, no &ldquo;let me check with my boss.&rdquo;
           </p>
         </div>
 
@@ -733,54 +733,54 @@ function CaseStudy() {
       <div className="shell">
         <div className="sec-head">
           <div className="reveal">
-            <div className="label">§ Case file — 2024-Q3 · Hernandez Logistics</div>
-            <h2 className="line-up"><Line>From a <em>conditional</em></Line><Line>rating to <em>satisfactory</em>.</Line><Line>In 11 months.</Line></h2>
+            <div className="label">§ A real customer story</div>
+            <h2 className="line-up"><Line>From a <em>warning letter</em></Line><Line>to a <em>clean record</em>.</Line><Line>In 11 months.</Line></h2>
           </div>
           <p className="lede reveal" data-d="2">
-            Hernandez came to us after a compliance review dropped them to Conditional — and their
-            insurance broker quoted a 38% renewal hike. We re-built their DQ folder, restructured
-            HOS coaching, and filed 84 DataQs over three quarters.
+            Maple Ridge Transport came to us after a safety audit went badly — with permits expiring
+            and driver files in disarray. We rebuilt their DQ folder, sorted out HOS logs, and
+            got every permit current within three months.
           </p>
         </div>
 
         <div className="case-grid">
           <div className="case-img clip-l">
-            <span className="corner-tag">FIG. 02 · The Hernandez yard</span>
+            <span className="corner-tag">A real customer yard</span>
             <image-slot id="case-photo" shape="rect"
               placeholder="Drop a yard / shop photo — natural daylight, a tractor or a manager at work."
               src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=1400&q=85&auto=format&fit=crop"></image-slot>
             <div className="corner-foot">
               <span>Mississauga, ON</span>
-              <span>104 power units</span>
+              <span>104 trucks</span>
             </div>
           </div>
 
           <div className="case-body reveal-x" data-d="2">
             <div>
-              <div className="label">The client said</div>
+              <div className="label">The customer said</div>
               <blockquote className="quote">
-                We had three weeks before our renewal quote and a Conditional rating
-                on the door. The Proactive Safety Solutions team picked up the phone, drove out to
-                meet us, and four days later we had a plan I could actually run.
+                We had a warning letter, drivers running on expired medical cards, and audit
+                paperwork all over the place. Proactive Safety Solutions picked up the phone,
+                came to meet us, and four days later we had a plan I could actually run.
               </blockquote>
               <div className="case-byline">
                 <span className="who">Lúcio Hernandez</span>
-                <span className="role">Owner / Hernandez Logistics · USDOT 2884003</span>
+                <span className="role">Owner / Maple Ridge Transport</span>
               </div>
             </div>
 
             <div className="case-numbers">
               <div>
-                <div className="lbl">Rating</div>
-                <div className="v">Cond. <em>→</em> Sat.</div>
+                <div className="lbl">Audit result</div>
+                <div className="v">Warning <em>→</em> Clean</div>
               </div>
               <div>
-                <div className="lbl">Renewal Δ</div>
-                <div className="v tnum">–<Counter to={14} duration={1.6} className="" />%</div>
+                <div className="lbl">DQ files fixed</div>
+                <div className="v tnum"><Counter to={104}/></div>
               </div>
               <div>
-                <div className="lbl">DataQs won</div>
-                <div className="v tnum"><Counter to={71}/><em>/</em><Counter to={84}/></div>
+                <div className="lbl">Permits renewed</div>
+                <div className="v tnum"><Counter to={38}/></div>
               </div>
             </div>
           </div>
@@ -795,21 +795,21 @@ function CaseStudy() {
 /* ────────────────────────────────────────────────────────── */
 function Values() {
   const items = [
-    { g:"&", h:"Plain English",    p:"No regulator-speak in our emails. If a driver in Tulsa can't understand it, we re-write it." },
-    { g:"§", h:"Paper trail",      p:"Every recommendation links back to a CFR cite. Every win has a screenshot. Audits become boring." },
-    { g:"✱", h:"Same desk",        p:"You get a named lead and a named backup. Not a ticket queue, not a chatbot, not a rotating CSM." },
-    { g:"→", h:"Skin in the game", p:"If you fail an audit on something we manage, we eat the consulting fee — and pay the re-mediation hours." },
+    { g:"&", h:"Plain English",   p:"No fancy regulator language in our emails. If a driver can't understand it, we re-write it." },
+    { g:"§", h:"Real paper trail", p:"Every recommendation is backed by the rule it's based on. Every job done comes with proof." },
+    { g:"✱", h:"Same person",     p:"You get one named person handling your account, plus a backup. Not a help desk, not a chatbot." },
+    { g:"→", h:"We own it",       p:"If you fail an audit on something we manage, we fix it for free. That's how confident we are in our work." },
   ];
   return (
     <section className="sec shell" id="values">
       <div className="sec-head">
         <div className="reveal">
-          <div className="label">§ The principles — 04</div>
-          <h2 className="line-up"><Line>What we'll <em>never</em></Line><Line>charge you for.</Line></h2>
+          <div className="label">§ How we&rsquo;re different</div>
+          <h2 className="line-up"><Line>What we <em>promise</em></Line><Line>every customer.</Line></h2>
         </div>
         <p className="lede reveal" data-d="2">
-          Trucking compliance is one of the few industries where the customer doesn&rsquo;t know if the work
-          got done until something goes wrong. We don&rsquo;t hide behind that.
+          In trucking compliance, you usually don&rsquo;t know if the work was done right until something
+          goes wrong. We don&rsquo;t work that way — here&rsquo;s what you can expect from us.
         </p>
       </div>
       <div className="values">
@@ -835,23 +835,23 @@ function Numbers() {
     <section className="numbers" id="numbers">
       <div className="shell numbers-grid">
         <p className="lede reveal">
-          The work, in <em>numbers</em> — pulled from 540 active fleets,<br/>
-          fiscal year 2025.
+          Our work, by the <em>numbers</em> — across 540 trucking<br/>
+          companies we serve every day.
         </p>
         <div className="num-card reveal" data-d="1">
-          <div className="lbl">Avg. renewal</div>
-          <div className="v tnum">-<Counter to={9} duration={1.6}/>%</div>
-          <div className="s">Year-over-year primary liability premium.</div>
+          <div className="lbl">MC Authority approval</div>
+          <div className="v tnum"><Counter to={14} duration={1.5}/><span style={{fontSize:32}}>days</span></div>
+          <div className="s">Average time from start to active authority.</div>
         </div>
         <div className="num-card reveal" data-d="2">
-          <div className="lbl">DataQ win rate</div>
-          <div className="v tnum"><Counter to={71} duration={1.8}/>%</div>
-          <div className="s">2,184 challenges filed · 1,551 successful.</div>
+          <div className="lbl">On-time filings</div>
+          <div className="v tnum"><Counter to={99} duration={1.8}/>%</div>
+          <div className="s">IFTA, IRP, and permit renewals filed on time.</div>
         </div>
         <div className="num-card reveal" data-d="3">
-          <div className="lbl">Time to audit</div>
+          <div className="lbl">Audit-ready files</div>
           <div className="v tnum"><Counter to={11} duration={1.5}/><span style={{fontSize:32}}>min</span></div>
-          <div className="s">Median time to produce a full DQ file from request.</div>
+          <div className="s">Average time to pull a complete driver file.</div>
         </div>
       </div>
     </section>
@@ -871,8 +871,8 @@ function Contact() {
           <h2 className="line-up"><Line>Tell us about</Line><Line>your <em>fleet</em>.</Line></h2>
         </div>
         <p className="lede reveal" data-d="2">
-          Send us your USDOT number and the last three months of CSA. We&rsquo;ll come back inside 48 hours
-          with the three things we&rsquo;d fix first — for free, in plain English, signed by a real person.
+          Tell us about your trucking company. We&rsquo;ll come back within 48 hours with the
+          three things we&rsquo;d fix first — for free, in plain English, signed by a real person.
         </p>
       </div>
 
@@ -919,7 +919,7 @@ function Contact() {
               </li>
               <li style={{display:"flex", gap:12}}>
                 <span className="mono" style={{color:"var(--mute)"}}>02</span>
-                The three things we&rsquo;d fix first — with CFR cites.
+                The three things we&rsquo;d fix first — in plain English.
               </li>
               <li style={{display:"flex", gap:12}}>
                 <span className="mono" style={{color:"var(--mute)"}}>03</span>
@@ -962,8 +962,8 @@ function Contact() {
 
           <div className="form-row">
             <div className="field">
-              <label>USDOT # <span className="req">*</span></label>
-              <input required placeholder="3492118"/>
+              <label>DOT # or MC # <span className="req">*</span></label>
+              <input required placeholder="3492118 (or MC #)"/>
             </div>
             <div className="field">
               <label>Fleet size</label>
@@ -979,7 +979,7 @@ function Contact() {
 
           <div className="field">
             <label>What&rsquo;s the headache today? <span style={{color:"var(--mute)"}}>(optional)</span></label>
-            <textarea placeholder="e.g. We're 5 days from an MCS-150 update and our CSA in Unsafe Driving is climbing."></textarea>
+            <textarea placeholder="e.g. Our IFTA filing is due next week and we just hired 3 new drivers."></textarea>
           </div>
 
           <button className="btn btn--signal" type="submit" style={{width:"100%", justifyContent:"center", height:54}}>
@@ -1011,12 +1011,12 @@ function Footer() {
           </div>
           <div className="foot-col">
             <h5>Services</h5>
-            <a href="#services">DOT &amp; FMCSA</a>
-            <a href="#services">ELD &amp; HOS</a>
+            <a href="#services">MC Authority</a>
+            <a href="#services">DQ Files</a>
+            <a href="#services">Driver Hiring</a>
+            <a href="#services">HOS Monitoring</a>
             <a href="#services">IFTA &amp; IRP</a>
-            <a href="#services">Driver qualification</a>
-            <a href="#services">CSA defense</a>
-            <a href="#services">Insurance</a>
+            <a href="#services">Permits</a>
           </div>
           <div className="foot-col">
             <h5>Company</h5>
