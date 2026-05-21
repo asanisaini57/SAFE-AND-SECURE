@@ -1,4 +1,4 @@
-// Proactive Safety Solutions — app (v2)
+// Safe Haul Compliance — app (v2)
 // + Scroll reveals (IntersectionObserver), word-stagger hero, animated scorecard bars
 // + New sections: Live Desk, Meet the Desk, On the Road, Case Study
 // + New palette options (midnight + brass + cream default)
@@ -241,8 +241,8 @@ function Nav() {
     <nav className="nav">
       <div className="shell nav-row">
         <a className="nav-brand" href="#top">
-          <span className="brand-mark">P</span>
-          <span>Proactive Safety Solutions</span>
+          <span className="brand-mark">S</span>
+          <span>Safe Haul Compliance</span>
         </a>
         <div className="nav-links">
           <a href="#services">Services</a>
@@ -760,7 +760,7 @@ function CaseStudy() {
               <div className="label">The customer said</div>
               <blockquote className="quote">
                 We had a warning letter, drivers running on expired medical cards, and audit
-                paperwork all over the place. Proactive Safety Solutions picked up the phone,
+                paperwork all over the place. Safe Haul Compliance picked up the phone,
                 came to meet us, and four days later we had a plan I could actually run.
               </blockquote>
               <div className="case-byline">
@@ -881,19 +881,19 @@ function Contact() {
           <div className="contact-meta">
             <div className="cm-row">
               <span className="k">Phone</span>
-              <span className="v">905-226-7726</span>
+              <span className="v">350-200-0085</span>
               <span className="x">M – F · 7a – 7p ET</span>
             </div>
             <hr className="rule-soft"/>
             <div className="cm-row">
               <span className="k">After hours</span>
-              <span className="v">905-226-7726</span>
+              <span className="v">350-200-0085</span>
               <span className="x">24 / 7 desk · roadside</span>
             </div>
             <hr className="rule-soft"/>
             <div className="cm-row">
               <span className="k">Email</span>
-              <span className="v">example@gmail.com</span>
+              <span className="v">safehaulcompliance@gmail.com</span>
               <span className="x">Avg. reply · 38 min</span>
             </div>
             <hr className="rule-soft"/>
@@ -952,11 +952,11 @@ function Contact() {
           <div className="form-row">
             <div className="field">
               <label>Email <span className="req">*</span></label>
-              <input type="email" required placeholder="example@gmail.com"/>
+              <input type="email" required placeholder="safehaulcompliance@gmail.com"/>
             </div>
             <div className="field">
               <label>Phone</label>
-              <input type="tel" placeholder="905-226-7726"/>
+              <input type="tel" placeholder="350-200-0085"/>
             </div>
           </div>
 
@@ -1028,15 +1028,15 @@ function Footer() {
           </div>
           <div className="foot-col">
             <h5>Reach us</h5>
-            <a>905-226-7726</a>
-            <a>example@gmail.com</a>
+            <a>350-200-0085</a>
+            <a>safehaulcompliance@gmail.com</a>
             <a>Mississauga, Ontario</a>
             <a>USDOT 3492118</a>
             <a>MC 1,209,447</a>
           </div>
         </div>
         <div className="foot-bot">
-          <span>© 2026 Proactive Safety Solutions — All rights reserved.</span>
+          <span>© 2026 Safe Haul Compliance — All rights reserved.</span>
           <span>Made in Ontario · Serving all of Canada</span>
         </div>
       </div>
