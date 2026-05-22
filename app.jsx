@@ -529,7 +529,6 @@ function Services() {
     <section className="sec shell" id="services">
       <div className="sec-head">
         <div className="reveal">
-          <div className="label">§ What we do — 01 / 06</div>
           <h2 className="line-up"><Line>Everything you need.</Line><Line><em>One team to call.</em></Line></h2>
         </div>
         <p className="lede reveal" data-d="2">
@@ -542,7 +541,6 @@ function Services() {
         {SERVICES.map((s,i)=>(
           <article key={i} className="service reveal" data-d={String(i+1)}>
             <div>
-              <div className="svc-num">{s.n} / 06</div>
               <h3 className="svc-title">{s.title}</h3>
               <p className="svc-blurb">{s.blurb}</p>
             </div>
