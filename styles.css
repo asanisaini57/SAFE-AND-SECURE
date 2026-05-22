@@ -22,10 +22,10 @@
   --safe-2:   #1f4e36;
   --ember:    #D6533F;     /* used sparingly as warm accent */
 
-  /* fonts — single sans family for everything (italic-serif accents dropped) */
-  --f-display: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --f-sans:    "Geist", ui-sans-serif, system-ui, sans-serif;
-  --f-mono:    "JetBrains Mono", ui-monospace, monospace;
+  /* fonts — simple, readable system fonts */
+  --f-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --f-sans:    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --f-mono:    'Monaco', 'Menlo', monospace;
 
   /* metrics */
   --pad-x: clamp(20px, 4vw, 80px);
@@ -63,12 +63,12 @@ body {
   font-family: var(--f-sans);
   background: var(--paper);
   color: var(--ink);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01", "cv11";
   overflow-x: hidden;
+  font-weight: 400;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -616,10 +616,10 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
 .hero h1 {
   margin: 0;
   font-family: var(--f-sans);
-  font-size: clamp(44px, 5.8vw, 92px);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 0.94;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
   text-wrap: balance;
 }
 .hero h1 em, .hero h1 .em {
@@ -973,11 +973,11 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
   color: var(--ink-2);
 }
 .sec-head h2 {
-  margin: 14px 0 0; font-family: var(--f-sans); font-weight: 500;
-  font-size: clamp(40px, 5.4vw, 72px); letter-spacing: -0.035em; line-height: 0.95;
+  margin: 14px 0 0; font-family: var(--f-sans); font-weight: 700;
+  font-size: clamp(32px, 4.5vw, 48px); letter-spacing: -0.02em; line-height: 1.1;
 }
 .sec-head h2 em { font-family: var(--f-sans); font-style: normal; font-weight: 500; }
-.sec-head .lede { color: var(--ink-2); font-size: 17px; line-height: 1.5; max-width: 46ch; }
+.sec-head .lede { color: var(--ink-2); font-size: 18px; line-height: 1.7; max-width: 50ch; }
 
 /* ── services grid ─────────────────────────────────────── */
 .services { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--ink); }
@@ -1011,12 +1011,12 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
   transition: color .35s ease;
 }
 .svc-title {
-  font-family: var(--f-sans); font-weight: 500;
-  font-size: 32px; letter-spacing: -0.025em; line-height: 1.02;
+  font-family: var(--f-sans); font-weight: 700;
+  font-size: 24px; letter-spacing: -0.01em; line-height: 1.2;
   margin: 4px 0 0;
 }
-.svc-title em { font-family: var(--f-sans); font-style: normal; font-weight: 500; }
-.svc-blurb { margin-top: 14px; font-size: 14.5px; line-height: 1.45; color: inherit; opacity: .85; }
+.svc-title em { font-family: var(--f-sans); font-style: normal; font-weight: 700; }
+.svc-blurb { margin-top: 12px; font-size: 16px; line-height: 1.6; color: inherit; opacity: 0.9; }
 .svc-meta {
   font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
   color: var(--ink-2);
@@ -1109,11 +1109,11 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
 .run-marker .mm { color: var(--signal); font-weight: 500; }
 .run-step h3 {
   margin: 0;
-  font-family: var(--f-sans); font-weight: 500;
-  font-size: 28px; letter-spacing: -0.02em; line-height: 1.02;
+  font-family: var(--f-sans); font-weight: 700;
+  font-size: 22px; letter-spacing: -0.01em; line-height: 1.2;
 }
-.run-step h3 em { font-family: var(--f-sans); font-style: normal; font-weight: 500; }
-.run-step p { margin: 0; color: var(--mute-2); font-size: 14px; line-height: 1.5; }
+.run-step h3 em { font-family: var(--f-sans); font-style: normal; font-weight: 700; }
+.run-step p { margin: 0; color: var(--mute-2); font-size: 15px; line-height: 1.6; }
 .run-step ul { padding: 0; margin: 0; list-style: none; font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; color: var(--paper); }
 .run-step ul li { padding: 8px 0; border-top: 1px solid rgba(255,255,255,.12); display: flex; justify-content: space-between; }
 .run-step ul li:last-child { border-bottom: 1px solid rgba(255,255,255,.12); }
@@ -1160,9 +1160,9 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
 }
 .desk-card .meta { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 6px; }
 .desk-card .role { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
-.desk-card h4 { margin: 4px 0 0; font-family: var(--f-sans); font-weight: 500; font-size: 24px; letter-spacing: -0.02em; }
-.desk-card h4 em { font-family: var(--f-sans); font-style: normal; font-weight: 500; }
-.desk-card .bio { font-size: 14px; color: var(--ink-2); line-height: 1.5; margin-top: 8px; }
+.desk-card h4 { margin: 4px 0 0; font-family: var(--f-sans); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+.desk-card h4 em { font-family: var(--f-sans); font-style: normal; font-weight: 700; }
+.desk-card .bio { font-size: 15px; color: var(--ink-2); line-height: 1.6; margin-top: 8px; }
 .desk-card .stats-row {
   display: flex; justify-content: space-between; gap: 12px;
   margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--rule-soft);
@@ -1201,7 +1201,7 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
 .road-tag .live .blip { width:7px; height:7px; background: var(--signal); border-radius: 50%; animation: blip 1.4s infinite; }
 .road-title {
   align-self: end;
-  font-family: var(--f-sans); font-weight: 500;
+  font-family: var(--f-sans); font-weight: 700;
   font-size: clamp(40px, 5.6vw, 84px); letter-spacing: -0.03em; line-height: 0.95;
   max-width: 18ch;
 }
@@ -1242,8 +1242,8 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
 .case-body { display: flex; flex-direction: column; justify-content: space-between; }
 .case-body .label { font-family: var(--f-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
 .case-body .quote {
-  font-family: var(--f-sans); font-weight: 400;
-  font-size: clamp(28px, 3vw, 44px); line-height: 1.14; letter-spacing: -0.025em;
+  font-family: var(--f-sans); font-weight: 500;
+  font-size: clamp(24px, 2.5vw, 32px); line-height: 1.4; letter-spacing: -0.01em;
   margin: 22px 0;
 }
 .case-body .quote::before { content: "“"; color: var(--signal); margin-right: 4px; }
@@ -1276,8 +1276,8 @@ hr.rule-soft { border:0; height:1px; background: var(--rule-soft); margin:0; }
   letter-spacing: -0.06em;
 }
 .value h4 {
-  margin: 0; font-family: var(--f-sans); font-weight: 500;
-  font-size: 22px; letter-spacing: -0.02em;
+  margin: 0; font-family: var(--f-sans); font-weight: 700;
+  font-size: 20px; letter-spacing: -0.01em;
 }
 .value p { margin: 6px 0 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
 
