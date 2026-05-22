@@ -144,7 +144,6 @@ function FieldGrid() {
       <div className="shell">
         <div className="sec-head">
           <div className="reveal">
-            <div className="label">§ Real work, real results</div>
             <h2 className="line-up">
               <Line>From the <em>truck</em> at dawn</Line>
               <Line>to the <em>office</em> at midnight.</Line>
@@ -467,7 +466,6 @@ function LiveDesk() {
     <section className="live-desk">
       <div className="shell ld-grid">
         <div className="reveal">
-          <div className="eyebrow">§ The desk, right now</div>
           <h3 className="ld-lede line-up">
             <Line>What we&rsquo;re <em>working on</em></Line>
             <Line>for our customers</Line>
@@ -572,7 +570,6 @@ function OnTheRoad() {
 
         <div className="road-overlay">
           <div className="road-tag reveal">
-            <span>§ ON THE ROAD — INTERSTATE 35 · 04:42 CT</span>
             <span className="live"><span className="blip"></span>Tracking 2,118 rigs</span>
           </div>
 
@@ -631,7 +628,6 @@ function MeetDesk() {
       <div className="shell">
         <div className="sec-head">
           <div className="reveal">
-            <div className="label">§ Meet the team that handles your work</div>
             <h2 className="line-up"><Line>You'll know who&rsquo;s</Line><Line>doing your <em>work</em>.</Line></h2>
           </div>
           <p className="lede reveal" data-d="2">
@@ -688,7 +684,6 @@ function TheRun() {
       <div className="shell">
         <div className="sec-head">
           <div className="reveal">
-            <div className="label eyebrow">§ How we work — in 4 simple steps</div>
             <h2 className="line-up"><Line>From <em>first call</em></Line><Line>to <em>fully sorted</em>.</Line></h2>
           </div>
           <p className="lede reveal" data-d="2">
@@ -731,7 +726,6 @@ function CaseStudy() {
       <div className="shell">
         <div className="sec-head">
           <div className="reveal">
-            <div className="label">§ A real customer story</div>
             <h2 className="line-up"><Line>From a <em>warning letter</em></Line><Line>to a <em>clean record</em>.</Line><Line>In 11 months.</Line></h2>
           </div>
           <p className="lede reveal" data-d="2">
@@ -802,7 +796,6 @@ function Values() {
     <section className="sec shell" id="values">
       <div className="sec-head">
         <div className="reveal">
-          <div className="label">§ How we&rsquo;re different</div>
           <h2 className="line-up"><Line>What we <em>promise</em></Line><Line>every customer.</Line></h2>
         </div>
         <p className="lede reveal" data-d="2">
@@ -865,7 +858,6 @@ function Contact() {
     <section className="contact shell" id="contact">
       <div className="sec-head">
         <div className="reveal">
-          <div className="label">§ The first conversation</div>
           <h2 className="line-up"><Line>Tell us about</Line><Line>your <em>fleet</em>.</Line></h2>
         </div>
         <p className="lede reveal" data-d="2">
@@ -909,7 +901,6 @@ function Contact() {
           </div>
 
           <div style={{marginTop:48, paddingTop:24, borderTop:"1px solid var(--rule-soft)"}}>
-            <div className="eyebrow" style={{marginBottom:14}}>§ What you&rsquo;ll get back</div>
             <ul style={{listStyle:"none", padding:0, margin:0, display:"grid", gap:10, fontSize:14.5}}>
               <li style={{display:"flex", gap:12}}>
                 <span className="mono" style={{color:"var(--mute)"}}>01</span>
