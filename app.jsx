@@ -882,7 +882,7 @@ function Contact() {
             <hr className="rule-soft"/>
             <div className="cm-row">
               <span className="k">Email</span>
-              <span className="v">safehaulcompliance@gmail.com</span>
+              <span className="v">info@safehaulcompliance.com</span>
               <span className="x">Avg. reply · 38 min</span>
             </div>
             <hr className="rule-soft"/>
@@ -940,7 +940,7 @@ function Contact() {
           <div className="form-row">
             <div className="field">
               <label>Email <span className="req">*</span></label>
-              <input type="email" required placeholder="safehaulcompliance@gmail.com"/>
+              <input type="email" required placeholder="you@yourcompany.com"/>
             </div>
             <div className="field">
               <label>Phone</label>
@@ -1013,7 +1013,7 @@ function Footer() {
           <div className="foot-col">
             <h5>Reach us</h5>
             <a>350-200-0085</a>
-            <a>safehaulcompliance@gmail.com</a>
+            <a href="mailto:info@safehaulcompliance.com">info@safehaulcompliance.com</a>
             <a>Mississauga, Ontario</a>
             <a>USDOT 3492118</a>
             <a>MC 1,209,447</a>
