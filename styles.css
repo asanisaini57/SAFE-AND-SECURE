@@ -71,13 +71,15 @@ body {
   font-weight: 400;
 }
 
-a { color: inherit; text-decoration: none; cursor: pointer; }
-button { font-family: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
 
 /* ── truck cursor follower ────────────────────────────── */
 @media (hover: hover) and (pointer: fine) {
-  body { cursor: none; }
-  a, button, .btn, .service, .value, input, select, textarea { cursor: none; }
+  /* Hide native cursor on EVERYTHING — truck handles it */
+  html, body, *, *::before, *::after {
+    cursor: none !important;
+  }
 }
 
 .cursor-truck {
