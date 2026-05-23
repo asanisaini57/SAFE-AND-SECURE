@@ -56,15 +56,6 @@
       smokePuffs.push({ el: puff, x: 0, y: 0, life: 0, size: 1 });
     }
 
-    // Create highway road dashes (yellow lane markers behind truck)
-    const roadDashes = [];
-    for (let i = 0; i < 8; i++) {
-      const dash = document.createElement('div');
-      dash.className = 'cursor-dash';
-      document.body.appendChild(dash);
-      roadDashes.push({ el: dash, x: 0, y: 0, life: 0, angle: 0 });
-    }
-
     // Create tire dust particles
     const dustParticles = [];
     for (let i = 0; i < 10; i++) {
@@ -73,6 +64,32 @@
       document.body.appendChild(dust);
       dustParticles.push({ el: dust, x: 0, y: 0, vx: 0, vy: 0, life: 0 });
     }
+
+    // Create crash sparks (yellow/red explosion bits)
+    const crashSparks = [];
+    for (let i = 0; i < 16; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'cursor-spark';
+      document.body.appendChild(spark);
+      crashSparks.push({ el: spark, x: 0, y: 0, vx: 0, vy: 0, life: 0 });
+    }
+
+    // Create impact burst (the explosion ring)
+    const crashBurst = document.createElement('div');
+    crashBurst.className = 'cursor-burst';
+    document.body.appendChild(crashBurst);
+
+    // Create BAM text
+    const crashBam = document.createElement('div');
+    crashBam.className = 'cursor-bam';
+    crashBam.textContent = 'BAM!';
+    document.body.appendChild(crashBam);
+
+    // Crash state
+    let lastCrashTime = 0;
+    let crashCooldown = 800; // ms between crashes
+    let burstLife = 0;
+    let bamLife = 0;
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
@@ -91,10 +108,7 @@
     let isMoving = false;
     let moveTimeout;
     let smokeIdx = 0;
-    let dashIdx = 0;
     let dustIdx = 0;
-    let dashSpawnCounter = 0;
-    let lastDashX = 0, lastDashY = 0;
 
     function animateCursor() {
       // Smooth truck movement with lag
@@ -148,40 +162,6 @@
         }
       });
 
-      // ── HIGHWAY ROAD DASHES (yellow lane markers behind truck) ──
-      if (isMoving && speed > 2) {
-        dashSpawnCounter++;
-        const distSinceLastDash = Math.sqrt(
-          Math.pow(truckX - lastDashX, 2) + Math.pow(truckY - lastDashY, 2)
-        );
-        // Spawn dashes at regular distance intervals (like real road markers)
-        if (distSinceLastDash > 26) {
-          const dash = roadDashes[dashIdx];
-          const facingRight = currentRotation < 90;
-          // Calculate angle of movement for dash orientation
-          const moveAngle = Math.atan2(dy, dx) * (180 / Math.PI);
-          // Position dash slightly behind truck on the "road"
-          const backOffset = facingRight ? -18 : 18;
-          dash.x = truckX + backOffset;
-          dash.y = truckY + 14; // Below truck (road level)
-          dash.life = 1;
-          dash.angle = moveAngle;
-          dash.el.style.transform = `translate(${dash.x}px, ${dash.y}px) rotate(${moveAngle}deg)`;
-          dash.el.style.opacity = '0.85';
-          dashIdx = (dashIdx + 1) % roadDashes.length;
-          lastDashX = truckX;
-          lastDashY = truckY;
-        }
-      }
-
-      // Fade road dashes (they stay still and fade out)
-      roadDashes.forEach(function(d) {
-        if (d.life > 0) {
-          d.life -= 0.022;
-          d.el.style.opacity = Math.max(0, d.life * 0.85);
-        }
-      });
-
       // ── TIRE DUST (kicked up from wheels when moving fast) ──
       if (isMoving && speed > 4 && Math.random() > 0.6) {
         const dust = dustParticles[dustIdx];
@@ -210,7 +190,96 @@
         }
       });
 
+      // ── CRASH DETECTION (when truck hits screen edges) ──
+      const edgeThreshold = 8;
+      const truckHalfWidth = 16;
+      const truckHalfHeight = 11;
+      const winW = window.innerWidth;
+      const winH = window.innerHeight;
+      const now = Date.now();
+
+      let crashX = -1, crashY = -1;
+
+      if (truckX - truckHalfWidth < edgeThreshold && speed > 1.5) {
+        crashX = 0; crashY = truckY;
+      } else if (truckX + truckHalfWidth > winW - edgeThreshold && speed > 1.5) {
+        crashX = winW; crashY = truckY;
+      } else if (truckY - truckHalfHeight < edgeThreshold && speed > 1.5) {
+        crashX = truckX; crashY = 0;
+      } else if (truckY + truckHalfHeight > winH - edgeThreshold && speed > 1.5) {
+        crashX = truckX; crashY = winH;
+      }
+
+      if (crashX >= 0 && (now - lastCrashTime > crashCooldown)) {
+        lastCrashTime = now;
+        triggerCrash(crashX, crashY);
+      }
+
+      // ── ANIMATE CRASH SPARKS ──
+      crashSparks.forEach(function(s) {
+        if (s.life > 0) {
+          s.life -= 0.03;
+          s.x += s.vx;
+          s.y += s.vy;
+          s.vy += 0.15; // Gravity pulls sparks down
+          s.vx *= 0.97; // Air resistance
+          s.el.style.transform = `translate(${s.x}px, ${s.y}px) scale(${0.5 + s.life * 0.5})`;
+          s.el.style.opacity = Math.max(0, s.life);
+        }
+      });
+
+      // ── ANIMATE IMPACT BURST ──
+      if (burstLife > 0) {
+        burstLife -= 0.045;
+        const scale = 1.6 - burstLife * 0.6; // grows
+        crashBurst.style.transform = `scale(${scale})`;
+        crashBurst.style.opacity = Math.max(0, burstLife);
+      }
+
+      // ── ANIMATE BAM TEXT ──
+      if (bamLife > 0) {
+        bamLife -= 0.025;
+        // Bam grows then shrinks, with slight rotation wiggle
+        const scale = bamLife > 0.7 ? (1 - bamLife) * 4 + 0.4 : 1.2 + Math.sin(bamLife * 10) * 0.05;
+        const rot = Math.sin(bamLife * 8) * 5;
+        crashBam.style.transform = `translate(-50%, -50%) scale(${Math.min(scale, 1.4)}) rotate(${rot}deg)`;
+        crashBam.style.opacity = Math.max(0, bamLife * 1.2);
+      }
+
       requestAnimationFrame(animateCursor);
+    }
+
+    // ── TRIGGER CRASH EFFECT ──
+    function triggerCrash(x, y) {
+      // Spawn 16 sparks in all directions
+      crashSparks.forEach(function(s, i) {
+        const angle = (i / 16) * Math.PI * 2 + (Math.random() - 0.5) * 0.4;
+        const speed = 3 + Math.random() * 4;
+        s.x = x;
+        s.y = y;
+        s.vx = Math.cos(angle) * speed;
+        s.vy = Math.sin(angle) * speed - 1.5; // slight upward boost
+        s.life = 1;
+        s.el.style.transform = `translate(${x}px, ${y}px) scale(1)`;
+        s.el.style.opacity = '1';
+      });
+
+      // Impact burst circle
+      burstLife = 1;
+      crashBurst.style.left = x + 'px';
+      crashBurst.style.top = y + 'px';
+      crashBurst.style.transform = 'scale(0)';
+      crashBurst.style.opacity = '0.9';
+
+      // BAM text
+      bamLife = 1;
+      // Position BAM offset toward center of screen so it stays visible
+      const offsetX = x < 50 ? 40 : (x > window.innerWidth - 50 ? -40 : 0);
+      const offsetY = y < 50 ? 30 : (y > window.innerHeight - 50 ? -30 : 0);
+      crashBam.style.left = (x + offsetX) + 'px';
+      crashBam.style.top = (y + offsetY) + 'px';
+      crashBam.style.transform = 'translate(-50%, -50%) scale(0)';
+      crashBam.style.opacity = '0';
     }
     animateCursor();
 
@@ -218,7 +287,6 @@
     document.addEventListener('mouseleave', function() {
       cursorTruck.style.opacity = '0';
       smokePuffs.forEach(function(p) { p.el.style.opacity = '0'; });
-      roadDashes.forEach(function(d) { d.el.style.opacity = '0'; });
       dustParticles.forEach(function(d) { d.el.style.opacity = '0'; });
     });
     document.addEventListener('mouseenter', function() {
@@ -400,8 +468,10 @@
     if ('ontouchstart' in window) {
       cursorTruck.style.display = 'none';
       smokePuffs.forEach(function(p) { p.el.style.display = 'none'; });
-      roadDashes.forEach(function(d) { d.el.style.display = 'none'; });
       dustParticles.forEach(function(d) { d.el.style.display = 'none'; });
+      crashSparks.forEach(function(s) { s.el.style.display = 'none'; });
+      crashBurst.style.display = 'none';
+      crashBam.style.display = 'none';
       document.body.style.cursor = '';
     }
 
