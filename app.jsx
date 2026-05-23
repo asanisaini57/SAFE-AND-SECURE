@@ -867,7 +867,7 @@ function Contact() {
           <div className="contact-meta">
             <div className="cm-row">
               <span className="k">Phone</span>
-              <span className="v">905-226-7726</span>
+              <span className="v">350-200-0085</span>
               <span className="x">Mon – Fri</span>
             </div>
             <hr className="rule-soft"/>
@@ -989,7 +989,7 @@ function Footer() {
           </div>
           <div className="foot-col">
             <h5>Reach us</h5>
-            <a href="tel:9052267726">905-226-7726</a>
+            <a href="tel:3502000085">350-200-0085</a>
             <a href="mailto:info@safehaulcompliance.com">info@safehaulcompliance.com</a>
             <a>Mississauga, Ontario</a>
           </div>
