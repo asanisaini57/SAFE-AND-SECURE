@@ -857,8 +857,8 @@ function Contact() {
           <h2 className="line-up"><Line>Tell us about</Line><Line>your <em>fleet</em>.</Line></h2>
         </div>
         <p className="lede reveal" data-d="2">
-          Tell us about your trucking company. We&rsquo;ll come back within 48 hours with the
-          three things we&rsquo;d fix first — for free, in plain English, signed by a real person.
+          Tell us about your trucking company. We&rsquo;ll get back to you quickly with a plan
+          to keep your fleet compliant and your drivers safe.
         </p>
       </div>
 
@@ -868,25 +868,19 @@ function Contact() {
             <div className="cm-row">
               <span className="k">Phone</span>
               <span className="v">905-226-7726</span>
-              <span className="x">M – F · 7a – 7p ET</span>
-            </div>
-            <hr className="rule-soft"/>
-            <div className="cm-row">
-              <span className="k">After hours</span>
-              <span className="v">905-226-7726</span>
-              <span className="x">24 / 7 desk · roadside</span>
+              <span className="x">Mon – Fri</span>
             </div>
             <hr className="rule-soft"/>
             <div className="cm-row">
               <span className="k">Email</span>
               <span className="v">info@safehaulcompliance.com</span>
-              <span className="x">Avg. reply · 38 min</span>
+              <span className="x">We reply quickly</span>
             </div>
             <hr className="rule-soft"/>
             <div className="cm-row">
               <span className="k">Office</span>
               <span className="v">Mississauga, Ontario, Canada</span>
-              <span className="x">Walk-ins welcome</span>
+              <span className="x">By appointment</span>
             </div>
           </div>
 
@@ -1045,12 +1039,7 @@ function App() {
     <>
       <Nav/>
       <Hero/>
-      <BelowHero/>
-      {t.marquee && <Marquee/>}
-      <LiveDesk/>
       <Services/>
-      <FieldGrid/>
-      <OnTheRoad/>
       <TheRun/>
       <Values/>
       <Contact/>
