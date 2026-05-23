@@ -74,6 +74,152 @@ body {
 a { color: inherit; text-decoration: none; cursor: pointer; }
 button { font-family: inherit; cursor: pointer; }
 
+/* ── custom cursor follower ───────────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  body { cursor: none; }
+  a, button, .btn, .service, .value, input, select, textarea { cursor: none; }
+}
+
+.cursor-dot, .cursor-ring {
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  will-change: transform;
+  transition: opacity .25s ease, width .3s cubic-bezier(.22,.61,.36,1), height .3s cubic-bezier(.22,.61,.36,1), background-color .25s ease, border-color .25s ease;
+}
+
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--signal);
+  margin-left: -4px; margin-top: -4px;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+}
+
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(37, 99, 235, 0.4);
+  margin-left: -18px; margin-top: -18px;
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.cursor-dot--active {
+  width: 14px; height: 14px;
+  margin-left: -7px; margin-top: -7px;
+  background: var(--signal);
+}
+
+.cursor-ring--active {
+  width: 60px; height: 60px;
+  margin-left: -30px; margin-top: -30px;
+  border-color: rgba(37, 99, 235, 0.7);
+  background: rgba(37, 99, 235, 0.1);
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+  body { cursor: auto !important; }
+  a, button, .btn { cursor: pointer !important; }
+}
+
+/* ── ripple effect ────────────────────────────────────── */
+.btn, .nav-links a {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-anim .6s cubic-bezier(.22,.61,.36,1);
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to { transform: scale(2.5); opacity: 0; }
+}
+
+/* ── animated underline on text links ─────────────────── */
+.foot-col a, .lede a, .legal-page a {
+  position: relative;
+  display: inline-block;
+}
+.foot-col a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 1.5px;
+  background: var(--signal);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .35s cubic-bezier(.22,.61,.36,1);
+}
+.foot-col a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ── card 3d tilt prep ──────────────────────────────────── */
+.service, .value {
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease, border-color .35s ease;
+}
+
+/* ── nav links - remove individual transform (handled by tilt) ── */
+.nav-links a:hover {
+  background: var(--ink);
+  color: #FFFFFF;
+}
+
+/* ── nav-brand override (no cursor: none on logo for accessibility) ── */
+.nav-brand:hover .nav-logo {
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.25));
+}
+
+/* ── arrow inside button slides smoothly ──────────────── */
+.btn .arrow {
+  transition: transform .3s cubic-bezier(.22,.61,.36,1);
+}
+
+/* ── hero CTA buttons get extra glow on hover ────────── */
+.hero-cine-cta .btn--signal {
+  position: relative;
+}
+.hero-cine-cta .btn--signal::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--signal), var(--signal-2));
+  opacity: 0;
+  z-index: -1;
+  filter: blur(12px);
+  transition: opacity .35s ease;
+}
+.hero-cine-cta .btn--signal:hover::before {
+  opacity: 0.6;
+}
+
+/* ── value cards subtle border glow ───────────────────── */
+.value {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 22px 20px;
+  background: var(--paper-2);
+  transition: all .35s cubic-bezier(.22,.61,.36,1);
+}
+.value:hover {
+  border-color: var(--signal);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+}
+
+/* ── form inputs with smoother focus ──────────────────── */
+input, select, textarea {
+  border-radius: 10px !important;
+}
+
 /* ── satisfying micro-interactions ─────────────────────── */
 
 /* Interactive elements get a pointer cursor with smooth transitions */
