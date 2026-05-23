@@ -276,7 +276,7 @@ function Hero() {
           <span className="dot-live"></span>
           <span>MC AUTHORITY · IFTA · IRP · PERMITS</span>
           <span className="sep"></span>
-          <span>ONTARIO, CANADA</span>
+          <span>SERVING USA &amp; CANADA</span>
         </div>
 
         <h1 className="hero-cine-title line-up">
@@ -299,7 +299,7 @@ function Hero() {
         <div className="hero-cine-foot reveal" data-d="6">
           <div className="hcf-item">
             <span className="hcf-num">Built for</span>
-            <span className="hcf-lbl">Canadian fleets</span>
+            <span className="hcf-lbl">US &amp; Canadian fleets</span>
           </div>
           <div className="hcf-divider"></div>
           <div className="hcf-item">
@@ -976,7 +976,7 @@ function Footer() {
       <div className="shell">
         <div className="foot-top">
           <div className="foot-brand">
-            <p>Compliance and safety for Canadian trucking. Based in Ontario. Real people, not a portal.</p>
+            <p>Compliance and safety for trucking companies across USA and Canada. Real people, not a portal.</p>
           </div>
           <div className="foot-col">
             <h5>Services</h5>
@@ -1001,7 +1001,7 @@ function Footer() {
         </div>
         <div className="foot-bot">
           <span>© 2026 Safe Haul Compliance — All rights reserved.</span>
-          <span>Made in Ontario · Serving all of Canada</span>
+          <span>Based in Ontario · Serving USA &amp; Canada</span>
         </div>
       </div>
     </footer>
